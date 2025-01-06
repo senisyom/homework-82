@@ -5,7 +5,6 @@ import { imagesUpload } from "../multer";
 import Album from "../models/Album";
 const albumRouter = express.Router();
 
-
 albumRouter.get("/albums", async (req, res, next): Promise<any> => {
   try {
     const albums = await Album.find();
