@@ -5,6 +5,7 @@ import Track from "../models/Track";
 const tracksRouter = express.Router();
 
 tracksRouter.get("/tracks", async (req, res, next): Promise<any> => {
+  
   try {
     const trackId = req.query.track_id as string;
     if (trackId) {
@@ -18,6 +19,7 @@ tracksRouter.get("/tracks", async (req, res, next): Promise<any> => {
     next(error);
   }
 });
+
 tracksRouter.post("/tracks", async (req, res, next): Promise<any> => {
   try {
     const tracksMutation: TrackMutation = {

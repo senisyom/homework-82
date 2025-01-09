@@ -4,6 +4,7 @@ import path from "path";
 import { randomUUID } from "crypto";
 import config from "./config";
 const imageStorage = multer.diskStorage({
+  
   destination: async (_req, _file, cb) => {
     const destDir = path.join(config.publicPath, "images");
     await fs.mkdir(destDir, { recursive: true });

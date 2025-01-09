@@ -16,11 +16,22 @@ export interface ITrack {
   album: ObjectId;
   duration: string;
 }
-export type TrackMutation = Omit<ITrack, "_id">; 
-
+export type TrackMutation = Omit<ITrack, "_id">;
 
 export interface AlbumMutation {
   artist: ObjectId;
   date: string;
   image: string | null;
 }
+
+export type TrackMutation = Omit<ITrack, "_id">;
+export interface UserFields {
+  username: string;
+  password: string;
+  token: string;
+}
+export interface UserMethods {
+  checkPassword(password: string): Promise<boolean>;
+  generateToken(): void;
+}
+export type UserModel = Model<UserFields, {}, UserMethods>;
